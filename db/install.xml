@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="blocks/mycourses/db" VERSION="20140819" COMMENT="XMLDB file for Moodle blocks/mycourses"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="semester_categories" COMMENT="Semester categories, e.g. Fall 2013, Spring 2014.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="name" TYPE="text" NOTNULL="true" SEQUENCE="false" COMMENT="The displayed name of the semester category."/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="course_semester_category" COMMENT="Mapping between course categories and courses.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="semester_category" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Moodle course id."/>
+        <FIELD NAME="path" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Course category path as slash separated category names"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="category_semester_category" COMMENT="Maps categories into semester categories.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="category" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Category id"/>
+        <FIELD NAME="semester_category" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="Semester category id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="mycourses_favourites" COMMENT="Personal favourite courses">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="user" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="user id"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="course id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="favourites_user_foreign" TYPE="foreign" FIELDS="user" REFTABLE="user" REFFIELDS="id"/>
+        <KEY NAME="favourites_course_foreign" TYPE="foreign" FIELDS="course" REFTABLE="course" REFFIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="favourites_user_course" UNIQUE="true" FIELDS="user, course"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>

@@ -1,0 +1,210 @@
+ 
+
+
+/* TR overrides */
+.ui-spinner .ui-icon-triangle-1-s {
+	/* need to fix icons sprite */
+	/*background-position: -65px -16px;*/
+}
+.ui-tabs {
+	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+	/*padding: .2em;*/
+	
+}
+
+
+.ui-tabs .ui-tabs-nav {
+/*used*/
+	margin: 0;
+	padding: .2em 0 0 ;
+	
+	
+}
+.ui-tabs .ui-tabs-nav li {
+	list-style: none;
+	float: left;
+	position: relative;
+	top: 0;
+	margin: 1px .2em 0 0;
+	border-bottom-width: 0;
+	padding: 0;
+	white-space: nowrap;
+	
+}
+.ui-tabs .ui-tabs-nav li a {
+	float: left;
+	padding: .5em 1em;
+	text-decoration: none;
+	
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+	margin-bottom: -1px;
+	padding-bottom: 1px;
+	
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled a,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading a {
+	cursor: text;
+}
+.ui-tabs .ui-tabs-nav li a, /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active a {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	/*border-width: 0;*/
+	padding: 1em 1.4em;
+	background: none;
+	/*border-top: 1px solid #cccccc;*/
+	border-left: 1px solid #cccccc;
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	
+}
+.ui-tooltip {
+	padding: 8px;
+	position: absolute;
+	z-index: 9999;
+	max-width: 300px;
+	-webkit-box-shadow: 0 0 5px #aaa;
+	box-shadow: 0 0 5px #aaa;
+}
+body .ui-tooltip {
+	border-width: 2px;
+}
+
+.ui-tabs-anchor {
+    color: #211A52 !important;
+}
+
+/* Component containers
+----------------------------------*/
+
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	border: 1px solid #cccccc;
+	background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
+	font-weight: bold;
+	/*color: #1c94c4;*/
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+	/*color: #1c94c4;
+	text-decoration: none;*/
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+	border: 1px solid #fbcb09;
+	background: #fdf5ce url(images/ui-bg_glass_100_fdf5ce_1x400.png) 50% 50% repeat-x;
+	font-weight: bold;
+	/*color: #c77405;*/
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited {
+/*used:*/
+    /*color: #c77405;
+	text-decoration: none;*/
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+    /*used:*/
+	/*border: 1px solid #fbd850;*/
+	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
+	font-weight: bold;
+	/*color: #eb8f00;*/
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+/*used*/
+	/*color: #eb8f00;
+	text-decoration: none;*/
+}
+
+/* Content styles
+----------------------------------*/
+
+.block_mycourses .content .course_title {
+        margin-left: 15px;
+}
+
+.block_mycourses .content .teacher_info {
+        margin-left: 60px;
+        font-size: 70%;
+        text-indent:-2em;
+        color: #555;
+}
+
+.block_mycourses .content .role_info {
+        margin-left: 60px;
+        font-size: 80%;
+        text-indent:-2em;
+}
+
+.block_mycourses .content .category_path {
+        margin-left: 60px;
+        font-size: 70%; 
+        /*padding-bottom: 3px;*/
+        text-indent:-2em;
+        color: #555;
+}
+
+.block_mycourses .content .category_header {
+        /*margin-left: -10px;*/
+        margin-top: 10px;
+        margin-bottom: 5px;
+}
+
+.block_mycourses .content h3 {
+        font-size: 13.2999px !important;
+        letter-spacing: normal !important;
+        color: #999 !important;
+}
+
+.block_mycourses .content h2 a {
+        color: #211A52 !important;
+}
+
+.block_mycourses .content .recentactivity {
+    margin-top: 10px;
+    font-size: 13.299px;
+    color: #6a7783;
+    margin-left: 63px;
+    text-indent: -2em;
+}
+
+.ui-widget-content {
+    border: 0px;
+}
+
+.ui-widget-header {
+    border: 0px solid rgb(170, 170, 170);
+    background: url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% rgb(255, 255, 255);
+   } 
+    
+.ui-tabs .ui-tabs-panel {
+    border-top: 1px solid rgb(204, 204, 204);
+}
+
+.ui-corner-bottom {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+img.mycourses-favourite {
+    cursor: pointer;
+    float: right;
+}
