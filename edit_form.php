@@ -4,6 +4,9 @@ class block_mycourses_edit_form extends block_edit_form {
 
     protected function specific_definition($mform) {
 
+	/* Something's wrong here, and I can't quite figure it out.
+	   Defaults don't get set as they should. */
+
         // Section header title according to language file.
         $mform->addElement('header', 'configheader', get_string('blocksettings', 'block'));
 

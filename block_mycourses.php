@@ -56,11 +56,7 @@ class block_mycourses extends block_base {
 	// Make UL for semester category heading
 	$last_sem_cat = '';
 	$this->content->text .= '<ul id="semester_category_header">';
-	/*
-	if ($favourite_courses) {
-	    $this->content->text .= "<li><a href=\"#semester_category_favourites\">Fav</a></li>";
-	}
-	*/
+
 	foreach ($all_courses as $course) {
 	    if ($course->semester != $last_sem_cat) {
 		if (!$course->semester == null) {

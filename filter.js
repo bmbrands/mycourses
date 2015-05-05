@@ -1,3 +1,7 @@
+/*
+Copyleft 2013, Karsten Kryger, Aalborg University
+*/
+
 $(document).ready(function() {
 
 $('#mycourses_container').tabs();
