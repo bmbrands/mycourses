@@ -56,7 +56,7 @@ function block_mycourses_get_courses($showteachers,
                    EXISTS (SELECT 1
                              FROM {role_assignments} ra
                              JOIN {role} r ON ra.roleid = r.id
-                             JOIN {role_capabilities} rc ON r.id = rc.roleid
+                             JOIN {role_capabilities} rc ON (r.id = rc.roleid AND rc.contextid = ctx.id)
                             WHERE ra.userid = :userid2
                               AND ra.contextid = ctx.id
                               AND rc.capability = :capability1
