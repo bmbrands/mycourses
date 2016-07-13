@@ -15,12 +15,18 @@ Copyleft 2013, Karsten Kryger, Aalborg University
 }
 
 
-.ui-tabs .ui-tabs-nav {
+.block_mycourses .ui-tabs .ui-tabs-nav {
 /*used*/
 	margin: 0;
-	padding: .2em 0 0 ;
-	
-	
+	padding: .2em 0 0;
+    overflow: hidden;
+}
+.block_mycourses .ui-corner-top {
+    border-radius: 0;
+}
+.block_mycourses .ui-tabs .ui-tabs-panel.semester_category {
+    border: 1px solid #ccc;
+    margin-top: -1px;
 }
 .ui-tabs .ui-tabs-nav li {
 	list-style: none;
@@ -86,13 +92,11 @@ body .ui-tooltip {
 
 /* Interaction states
 ----------------------------------*/
-.ui-state-default,
-.ui-widget-content .ui-state-default,
-.ui-widget-header .ui-state-default {
+.block_mycourses .ui-state-default,
+.block_mycourses .ui-widget-content .ui-state-default,
+.block_mycourses .ui-widget-header .ui-state-default {
 	border: 1px solid #cccccc;
-	background: #f6f6f6 url(images/ui-bg_glass_100_f6f6f6_1x400.png) 50% 50% repeat-x;
-	font-weight: bold;
-	/*color: #1c94c4;*/
+	background: #f6f6f6;
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -119,9 +123,9 @@ body .ui-tooltip {
     /*color: #c77405;
 	text-decoration: none;*/
 }
-.ui-state-active,
-.ui-widget-content .ui-state-active,
-.ui-widget-header .ui-state-active {
+.block_mycourses .ui-state-active,
+.block_mycourses .ui-widget-content .ui-state-active,
+.block_mycourses .ui-widget-header .ui-state-active {
     /*used:*/
 	/*border: 1px solid #fbd850;*/
 	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
@@ -188,14 +192,15 @@ body .ui-tooltip {
     text-indent: -2em;
 }
 
-.ui-widget-content {
-    border: 0px;
+.block_mycourses .ui-widget-content {
+    border: 0;
+    padding: 0;
 }
 
-.ui-widget-header {
-    border: 0px solid rgb(170, 170, 170);
-    background: url("images/ui-bg_highlight-soft_75_cccccc_1x100.png") repeat-x scroll 50% 50% rgb(255, 255, 255);
-   } 
+.block_mycourses .ui-widget-header {
+    border: 0;
+    background: none;
+} 
     
 .ui-tabs .ui-tabs-panel {
     border-top: 1px solid rgb(204, 204, 204);

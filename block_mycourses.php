@@ -48,10 +48,11 @@ class block_mycourses extends block_base {
 	}
 	$all_courses = array_merge($favourite_courses, $courses);
 
-	$this->content->text = '<div id="mycourses_container">';
 
 	$searchbox = "<div><input type=\"text\" id=\"mycoursestextfilter\" placeholder=\"".get_string('search_text', 'block_mycourses')."\"/></div><script type=\"text/javascript\" src=\"/blocks/mycourses/filter.js\"></script>";
-	$this->content->text .= $searchbox;
+	$this->content->text = $searchbox;
+
+	$this->content->text .= '<div id="mycourses_container">';
 
 	// Make UL for semester category heading
 	$last_sem_cat = '';
